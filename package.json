@@ -1,0 +1,49 @@
+{
+  "name": "cryptopins-api",
+  "version": "1.0.0",
+  "description": "Cryptopins-Api",
+  "main": "index.js",
+  "scripts": {
+    "server": "node -r esm src/index",
+    "debug": "nodemon -r esm src/index"
+  },
+  "author": "Usairim Isani",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.0.0-beta.44",
+    "@babel/plugin-transform-runtime": "^7.0.0-beta.44",
+    "babel-cli": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "eslint": "^4.19.1",
+    "eslint-loader": "^2.0.0",
+    "nodemon": "^1.17.3",
+    "webpack": "^4.6.0",
+    "webpack-cli": "^2.0.15",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "dependencies": {
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0-beta.44",
+    "@babel/runtime": "^7.0.0-beta.44",
+    "ascii-art": "0.0.2-alpha",
+    "assert": "^1.3.0",
+    "babel-core": "^6.26.0",
+    "body-parser": "~1.13.2",
+    "cookie-parser": "~1.3.5",
+    "cors": "^2.7.1",
+    "debug": "~2.2.0",
+    "esm": "^3.0.21",
+    "express": "~4.13.1",
+    "iron": "^4.0.4",
+    "jade": "~1.11.0",
+    "jsonwebtoken": "^5.7.0",
+    "mongoose": "^4.4.7",
+    "morgan": "~1.6.1",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^4.0.0",
+    "q": "^1.4.1",
+    "serve-favicon": "~2.3.0",
+    "tracer": "^0.8.3"
+  }
+}
