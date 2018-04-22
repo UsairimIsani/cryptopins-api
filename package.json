@@ -4,7 +4,7 @@
   "description": "Cryptopins-Api",
   "main": "index.js",
   "scripts": {
-    "server": "node -r esm src/index",
+    "start": "node -r esm src/index",
     "debug": "nodemon -r esm src/index"
   },
   "author": "Usairim Isani",

@@ -1,7 +1,7 @@
-import express from "express";
-let router = express.Router();
-import { Verify } from "../../Authenticate";
+import express, { Router } from "express";
+import Verify from "../../Authenticate/verify";
 import { listAll, login, logout, register, verifyUser } from "./Controller";
+let router = Router();
 //GET users
 router.get("/", Verify.user, listAll);
 //Add user

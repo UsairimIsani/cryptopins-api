@@ -1,7 +1,7 @@
 import passport from "passport";
-import { Verify, Authenticate } from "../../Authenticate";
 import User from "./Model";
 import { log } from "../../util";
+import { getLoginData } from "../../Authenticate/auth";
 
 export function listAll(req, res, next) {
   User.find({}, (err, users) => {
@@ -10,7 +10,7 @@ export function listAll(req, res, next) {
   });
 }
 
-export function register(req, res) {
+export function register(req, res, next) {
   User.register(
     new User({
       username: req.body.username
@@ -28,13 +28,19 @@ export function register(req, res) {
       if (req.body.lastname) {
         user.lastname = req.body.lastname;
       }
+
       user.save((err, user) => {
         passport.authenticate("local")(req, res, () => {
-          return res.status(200).json({
-            message: "User registered",
-            success: true,
-            data: null
-          });
+          console.log(req.query);
+          if (req.query.signin == "true") {
+            login(req, res, next);
+          } else {
+            return res.status(200).json({
+              message: "User registered",
+              success: true,
+              data: null
+            });
+          }
         });
       });
     }
@@ -60,7 +66,7 @@ export function login(req, res, next) {
           data: err
         });
       }
-      auth.getLoginData(user).then(
+      getLoginData(user).then(
         data => {
           console.log(data);
           return res.status(200).json({

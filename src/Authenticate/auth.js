@@ -4,7 +4,7 @@ import Iron from "iron";
 import tracer from "tracer";
 import Config from "../Config";
 import User from "../features/User/Model";
-import { Verify } from "./index";
+import Verify from "./verify";
 import { log } from "../util";
 //Setup Local Login Strategy
 passport.use(new LocalStrategy(User.authenticate()));
