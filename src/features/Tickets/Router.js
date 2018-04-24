@@ -5,6 +5,6 @@ export let TicketRouter = Router();
 TicketRouter.get("/", getAllTickets);
 TicketRouter.get("/:index", Verify.user, getAllTickets);
 TicketRouter.get("/:tid", Verify.user, getTicket);
-TicketRouter.post("/", createTicket);
+TicketRouter.post("/", Verify.user, createTicket);
 TicketRouter.put("/:tid", Verify.user, getTicket);
 TicketRouter.delete("/:tid", Verify.user);

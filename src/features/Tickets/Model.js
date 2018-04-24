@@ -3,6 +3,7 @@ import { BuyIn } from "./SubDocuments/BuyIn";
 
 let TicketsSchema = new mongoose.Schema(
   {
+    title: String,
     bidders: [{ type: mongoose.Schema.Types.ObjectId, ref: "user" }],
     buyInPrice: BuyIn,
     buyIns: [BuyIn],

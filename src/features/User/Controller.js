@@ -89,7 +89,7 @@ export function login(req, res, next) {
 }
 
 export function verifyUser(req, res) {
-  log(req._user);
+  // log(req._user);
   User.findById(req._user._id, (err, user) => {
     if (err) {
       return res.status(500).json({
@@ -98,7 +98,7 @@ export function verifyUser(req, res) {
         data: null
       });
     }
-    auth.getLoginData(user).then(
+    getLoginData(user).then(
       data => {
         log(data);
         return res.status(200).json({
