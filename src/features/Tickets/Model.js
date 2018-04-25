@@ -10,10 +10,12 @@ let TicketsSchema = new mongoose.Schema(
     currentValue: {
       type: Number
     },
-    expiry: {
-      type: Date,
-      required: true
-    }
+    duration: [
+      {
+        type: Date,
+        required: true
+      }
+    ]
   },
   { timestamps: true }
 );
