@@ -16,7 +16,7 @@ export function getLoginData(user, expiry) {
   delete userData.hash;
   delete userData.salt;
   delete userData.resetToken;
-  delete userData.admin;
+  // delete userData.admin;
   return new Promise((resolve, reject) => {
     Iron.seal(userData, Config.sealPass, Iron.defaults, (err, sealed) => {
       if (err) {
