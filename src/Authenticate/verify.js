@@ -79,6 +79,7 @@ let Verify = {
           // if everything is good, save to request for use in other routes
           req._user = decoded;
           // check if the user has admin flag true
+          log(req._user.admin);
           if (req._user.admin) {
             next();
           } else {

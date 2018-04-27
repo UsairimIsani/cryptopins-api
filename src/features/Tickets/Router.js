@@ -9,6 +9,6 @@ import {
 export let TicketRouter = Router();
 TicketRouter.get("/", Verify.user, getAllTickets);
 // TicketRouter.get("/:tid", Verify.user, getTicket);
-TicketRouter.post("/", Verify.user, Verify.admin, createTicket);
+TicketRouter.post("/", Verify.user, createTicket);
 TicketRouter.put("/:tid", Verify.user, updateTicket);
 TicketRouter.delete("/:tid", Verify.user, deleteTicket);

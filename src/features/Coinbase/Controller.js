@@ -31,6 +31,7 @@ export const getAllCharges = (req, res, next) => {
     });
 };
 export const createCharge = (req, res, next) => {
+  log(req.body);
   const ticketId = req.body.ticketId;
   TicketModel.findById(ticketId)
     .then(ticket => {
@@ -42,11 +43,16 @@ export const createCharge = (req, res, next) => {
           local_price: {
             amount: ticket.buyInPrice.amount,
             currency: "USD"
+          },
+          metadata: {
+            customer_id: req._user._id,
+            customer_name: req._user.username
           }
         };
         axios
           .post(`charges`, charge)
           .then(chargeRes => {
+            log("CHARGES RES", chargeRes.data);
             TicketModel.findByIdAndUpdate(ticketId)
               .then(ticket => {
                 ticket.currentValue += ticket.buyInPrice;
@@ -72,6 +78,7 @@ export const createCharge = (req, res, next) => {
               });
           })
           .catch(err => {
+            log("ERRRRRR", err.message);
             return err;
           });
       } else {
