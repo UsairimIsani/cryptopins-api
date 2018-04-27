@@ -17,8 +17,6 @@ export const getAllTickets = (req, res, next) => {
       });
   });
 };
-export const getTicketsByIndex = (req, res, next) => {};
-export const getTicket = (req, res, next) => {};
 export const createTicket = (req, res, next) => {
   log(req.body);
   TicketModel.create({ ...req.body })

@@ -1,10 +1,14 @@
 import express, { Router } from "express";
 import Verify from "../../Authenticate/verify";
-import { getAllTickets, getTicket, createTicket } from "./Controller";
+import {
+  getAllTickets,
+  createTicket,
+  updateTicket,
+  deleteTicket
+} from "./Controller";
 export let TicketRouter = Router();
-TicketRouter.get("/", getAllTickets);
-TicketRouter.get("/:index", Verify.user, getAllTickets);
-TicketRouter.get("/:tid", Verify.user, getTicket);
-TicketRouter.post("/", Verify.user, createTicket);
-TicketRouter.put("/:tid", Verify.user, getTicket);
-TicketRouter.delete("/:tid", Verify.user);
+TicketRouter.get("/", Verify.user, getAllTickets);
+// TicketRouter.get("/:tid", Verify.user, getTicket);
+TicketRouter.post("/", Verify.user, Verify.admin, createTicket);
+TicketRouter.put("/:tid", Verify.user, updateTicket);
+TicketRouter.delete("/:tid", Verify.user, deleteTicket);
