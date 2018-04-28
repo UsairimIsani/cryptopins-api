@@ -8,7 +8,6 @@ import { CoinbaseRouter } from "../features/Coinbase/Router";
 export default function(app, config, models) {
   var router = express.Router();
   //----API----Routes
-  app.use("/", express.static("/cryptopins-api/dist"));
   app.use("/api", router);
   router.use("/user", UserRouter);
   router.use("/tickets", TicketRouter);
