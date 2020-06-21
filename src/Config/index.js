@@ -1,24 +1,24 @@
 const Config = {
   secretKey: "864a6s8d^&%*%$&aASU((*&uih",
-  mongoUrl: "mongodb://admin:cryptopins@ds147459.mlab.com:47459/cryptopins",
+  mongoUrl: "mongodb://admin:cryptopins1@ds013280.mlab.com:13280/cryptopins",
   sealPass: "84a98sd4*&&%%*(%^*%^&asdas{}>894a*(*$@@8adYG&^&ASFDasd89dad",
   facebook: {
     secret: "",
     accessTokenUrl: "",
-    graphApiUrl: ""
+    graphApiUrl: "",
   },
   s3: {
     accessKeyId: "",
     secretAccessKey: "",
-    region: "eu-west-1"
+    region: "eu-west-1",
   },
   mailgun: {
     apiKey: "",
-    domain: ""
+    domain: "",
   },
   coinbase: {
     apiKey: "db27ad4a-b094-48c9-826d-e0de0feb3a18",
-    version: "2018-03-22"
-  }
+    version: "2018-03-22",
+  },
 };
 export default Config;
